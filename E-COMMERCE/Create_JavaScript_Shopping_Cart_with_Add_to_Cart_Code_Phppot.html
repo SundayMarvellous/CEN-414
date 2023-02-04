@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta property="og:url" content="https://phppot.com/javascript/javascript-shopping-cart/" /><title>Create JavaScript Shopping Cart with Add to Cart Code - Phppot</title>
+<meta name="description" content="A simple JavaScript shopping cart code containing "add to cart", "cart edit" and "delete/empty cart" features in client-side." /><meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0"
+	href="https://phppot.com/feed/" />
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/apple-touch-icon.png?v=031218">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/favicon-32x32.png?v=031218">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/favicon-16x16.png?v=031218">
+<link rel="manifest" href="/site.webmanifest?v=031218">
+<link rel="shortcut icon" href="/favicon.ico?v=031218">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Create JavaScript Shopping Cart with Add to Cart Code - Phppot" />
+<meta property="og:site_name"
+	content="Phppot" />
+<meta property="og:description" content="A simple JavaScript shopping cart code containing "add to cart", "cart edit" and "delete/empty cart" features in client-side." /><meta property="twitter:title" content="Create JavaScript Shopping Cart with Add to Cart Code - Phppot" />
+<meta name="twitter:site" content="@phppot" />
+<meta property="twitter:creator" content="@phppot" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output.jpg" /><meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:description" content="A simple JavaScript shopping cart code containing "add to cart", "cart edit" and "delete/empty cart" features in client-side." /><meta property="twitter:image" content="https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output.jpg" /><script async src="https://www.googletagmanager.com/gtag/js?id=UA-40067115-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-40067115-1');
+</script>
+<meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//www.google-analytics.com"><link rel="dns-prefetch" href="//www.youtube.com"><link rel="dns-prefetch" href="//googleads.g.doubleclick.net"><link rel="dns-prefetch" href="//static.doubleclick.net"><link rel="dns-prefetch" href="//www.google.com"><link rel="dns-prefetch" href="//i.ytimg.com"><link rel="dns-prefetch" href="//yt3.ggpht.com"><link rel="dns-prefetch" href="//fonts.gstatic.com"><meta name='robots' content='max-image-preview:large' />
+<link rel="https://api.w.org/" href="https://phppot.com/wp-json/" /><link rel="alternate" type="application/json" href="https://phppot.com/wp-json/wp/v2/posts/16916" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://phppot.com/xmlrpc.php?rsd" />
+<link rel="canonical" href="https://phppot.com/javascript/javascript-shopping-cart/" />
+<style>body{font-family:-apple-system,BlinkMacSystemFont,Roboto,Segoe UI,Helvetica Neue,Helvetica,Arial,sans-serif;margin:0 auto;-webkit-font-smoothing:antialiased;box-sizing:border-box;color:#2f2f2f}a{text-decoration:none;color:#2f20d1}a:visited{color:#4132ea}a img{border:0;background-color:none;vertical-align:bottom}.minientry{padding:20px 0 20px 0;overflow:auto}#site-logo{vertical-align:middle;padding:12px 8px 12px 0;width:79px;height:34px}#container{clear:both;text-align:left;width:952px}.content{width:1185px;margin:0 auto;padding-left:15px;padding-right:15px}#tutorial-body{float:left;margin-top:20px;width:820px}#tutorial-menu{float:left;width:235px;margin-bottom:20px}#tutorial{float:right;width:570px;padding-left:0}.two-column-content{width:935px;margin:0 auto;padding-left:15px;padding-right:15px}.two-column-content #tutorial-body{width:570px}.wrapper{width:100%;float:left;margin-bottom:60px}#article{width:570px;float:left;margin-top:20px;margin-bottom:5px}#aside{width:350px;float:right;font-size:.95em;margin-top:20px;position:-webkit-sticky;position:sticky;top:20px}#tutorial a:hover,#aboutcntnt a:hover,.testimonial-content a:hover{text-decoration:underline}#recommended a:hover{color:#2f20d1}.modified-on{color:#565656;margin-bottom:25px;font-size:.9em}code{background-color:#f3f3f3;padding:2px 4px;border-radius:4px}a.download{padding:8px 12px 8px 12px;margin:20px 40px 20px 0;color:#2f2f2f;display:inline-block;width:130px;text-align:center;border-radius:50px;border:1px solid #d5d9d9}#tutorial a.download:hover{background-color:#fffaec;text-decoration:none}a.demo{padding:8px 12px 8px 12px;margin:20px 30px 20px 0;color:#000;display:inline-block;width:130px;text-align:center;border-radius:50px;border:1px solid;background-color:#ffc72c;border-color:#ffd98e #ffbe3d #de9300}#tutorial a.demo:hover{background-color:#f7ae47;text-decoration:none}h1{margin:0 0 10px 0;font-weight:500;font-size:1.7em}h1 a,h1 a:visited{color:#2f2f2f}h2{margin-top:1.3em}h2 a,h2 a:visited{color:#000;border-bottom:0;text-decoration:none}h3 a,h3 a:visited{color:#2f2f2f;border-bottom:0;text-decoration:none}h3 a:hover{color:#000;text-decoration:underline}#tutorial p{line-height:1.45}#tutorial li{line-height:1.45;margin:6px 0}#tutorial strong{color:#474747}#tutorial-body #tutorial img {border-radius:15px}img{-ms-interpolation-mode:bicubic;border:0;height:auto;max-width:100%;vertical-align:middle}.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}.full-width{width:100%}.tutorial-table{width:100%;font-size:13px;border-top:#e5e5e5 1px solid;border-spacing:initial;margin:20px 0;word-break:break-word;table-layout:fixed}.tutorial-table th{background-color:#f5f5f5;padding:5px;text-align:left}.tutorial-table td{border-bottom:#f2f2f2 1px solid;background-color:#fff;padding:5px}.tutorial-table ul{padding:0;list-style-type:none;margin:0}.tutorial-table li:before{content:" - ";position:relative;margin-left:-10px;left:-5px}a.demo-download-icon{font-size:.9em;position:relative;display:inline-block;cursor:pointer;margin-right:8px;color:#5f6369;vertical-align:text-top}a.demo-download-icon:hover,a.testimonial-icon:hover{color:#1a73e7}a.get-product{display:inline-block;margin:10px 0;border-radius:3px;border:1px solid;padding:8px 50px;cursor:pointer;color:#262626;font-size:1.1em;background-color:#f0ad4e;border-color:#ffc87a #e2a348 #bf8a3f}.notice{background:#f9b7b8;padding:20px;margin:5px;border-radius:4px;font-size:1.2em;border:1px solid #e2a4a4;line-height:1.45}.post-section-highlight{background-color:#d3ffdb;padding:19px 19px 1px 19px;border-radius:15px}.post-section-highlight h2{font-size:1em;margin-top:0}pre{overflow:auto;margin:0 0 18px 0;tab-size:4}.prettyprint{font-size:1.2em;border-radius:15px;max-height:600px;background:#f6f6f6}pre code.hljs{display:block;overflow-x:auto;padding:1em}code.hljs{padding:3px 5px}/*!
+  Theme: StackOverflow Light
+  Description: Light theme as used on stackoverflow.com
+  Author: stackoverflow.com
+  Maintainer: @Hirse
+  Website: https://github.com/StackExchange/Stacks
+  License: MIT
+  Updated: 2021-05-15
+
+  Updated for @stackoverflow/stacks v0.64.0
+  Code Blocks: /blob/v0.64.0/lib/css/components/_stacks-code-blocks.less
+  Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
+*/.hljs{color:#2f3337;background:#f6f6f6}.hljs-subst{color:#2f3337}.hljs-comment{color:#656e77}.hljs-attr,.hljs-doctag,.hljs-keyword,.hljs-meta .hljs-keyword,.hljs-section,.hljs-selector-tag{color:#015692}.hljs-attribute{color:#803378}.hljs-name,.hljs-number,.hljs-quote,.hljs-selector-id,.hljs-template-tag,.hljs-type{color:#b75501}.hljs-selector-class{color:#015692}.hljs-link,.hljs-regexp,.hljs-selector-attr,.hljs-string,.hljs-symbol,.hljs-template-variable,.hljs-variable{color:#54790d}.hljs-meta,.hljs-selector-pseudo{color:#015692}.hljs-built_in,.hljs-literal,.hljs-title{color:#b75501}.hljs-bullet,.hljs-code{color:#535a60}.hljs-meta .hljs-string{color:#54790d}.hljs-deletion{color:#c02d2e}.hljs-addition{color:#2f6f44}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:700}.search-form{display:inline}.search{border:#e0e0e0 1px solid;background-color:#fcfefd;line-height:15px;margin-right:-30px;padding:5px 0 5px 8px;width:307px;color:#5c5c5c;border-radius:1000px;box-sizing:border-box}button.search-button{border:0;display:inline-block;vertical-align:middle;cursor:pointer;padding:0}form label{width:50px;display:inline-block}input#submit{padding:10px 40px;cursor:pointer;color:#755c3b;background:#a2e1f5;border:0}.subscribe{padding:10px 20px;cursor:pointer;color:#000;background:#dcdcdc;margin:0;border:1px solid #d0cfcf;border-color:#c3c3c3 #c1c1c1 #adadad;border-top-right-radius:50px;border-bottom-right-radius:50px;background-image:-webkit-linear-gradient(top,#dcdcdc,#bfbfbf);background-image:linear-gradient(top,#dcdcdc,#bfbfbf)}.feedb-email{padding:10px 8px;width:150px;margin:0;border:1px solid #c3c3c3;border-top-left-radius:4px;border-bottom-left-radius:4px}#header,#tutorial,#sidebar{margin-bottom:5px}#site_header{height:60px;border-bottom:1px solid #e2dfda;margin-bottom:10px}#site_header a{color:#565656;font-size:.9em}#site_header .header-link-container a{font-family:"Segoe UI",Optima,Helvetica,Arial,sans-serif;color:#6e3f00;font-weight:bold;font-size:1.1em}a.header-link{color:#fff;padding:7px 28px;font-size:.95em;transition:color 1s ease;font-weight:600}a.header-link:hover{color:#00f5ff;transition:color 1s ease}.header-link-container{float:right;vertical-align:middle;padding:12px 0}#site_header #header-contact-navigation{color:#5d3200;font-size:1em}#header-contact-navigation{font-family:"Segoe UI",Optima,Helvetica,Arial,sans-serif;color:#5d3200;font-weight:bold;vertical-align:middle;display:inline-block;margin:0 0 0 8px;border-radius:50px;border:1px solid;padding:8px 30px;cursor:pointer;background-color:#ffc72c;border-color:#ffd98e #ffbe3d #de9300}#header-contact-navigation:hover{background-color:#ffaf14}a.testimonial-icon{font-size:.9em;font-weight:500;position:relative;display:inline-block;cursor:pointer;margin-right:16px;color:#5f6369;vertical-align:text-top}#mobile-search-icon{display:none}.top{float:right;margin-bottom:1.17em}a.top{color:#505050;clear:both}a.top:hover{color:#333}#footer{clear:both;background-color:#fdfdfd;padding:20px 0 40px 0;overflow:auto}#footer ul{padding-left:0}.footer-menu{margin:20px 0 20px 0;text-align:center}.footer-menu li{display:inline-block;margin:0 10px 25px 10px}#footer .footer-menu .cat-item{border-radius:50px}.footer-menu>li>a{color:#6e3f00;padding:10px 30px;display:block;font-family:"Segoe UI",Optima,Helvetica,Arial,sans-serif;font-size:initial;font-weight:bold}.subscribe-section{overflow:auto;float:left}.subscribe-email{float:left}.footer-contact-banner-title{margin:15px 0 30px 0}#footer-contact-note{clear:both;background-color:#ffc72c;color:#262626;padding:25px 0 10px 0}#footer-contact-note h2{font-weight:normal;margin:2px 0}#footer-intro{font-size:1.1em;margin:10px 0}#footer-contact-navigation{border-radius:3px;border:1px solid;padding:8px 30px;cursor:pointer;color:#474747;margin:0 0 0 20px;border-color:#474747;border-radius:50px;display:inline-block}#footer-contact-navigation:hover{background-image:-webkit-linear-gradient(top,#eaeaea,#d6d5d5)}#footer-bottom a{color:#3d3d3b}.follow{float:right;margin:20px 0 0 0;color:#555}.follow a{color:#4f6773}.follow>a img{border:1px solid #e0e0e0;padding:8px;border-radius:25px;margin:20px}.separator{padding:0 5px;color:#d4cebe}.shop-footer-common .separator{padding:0 20px;color:#d4cebe}#footer-menu li{display:inline-block;margin:0 25px 25px 0;border-radius:20px;border:1px solid #e0e0e0}#footer-menu>li>a{color:#2f2f2f;padding:10px;display:block;min-width:100px}#footer-menu>li>a:hover{color:#009688}.footer-heading{margin-right:10px}#contactMe{margin-top:5px}#contactMe a{color:#474747;font-weight:bold}#aboutcntnt{line-height:1.45;background-color:#f9f8f3;padding:20px 17px;margin-bottom:20px;border-radius:15px}.hi-icon{vertical-align:text-top;padding-right:5px}.sidebar-featured-product{border:1px solid #dadfe2;border-radius:4px;display:flex}.sidebar-featured-url{margin:20px}.sidebar-featured-product a{color:#006fea;display:contents;width:150px;height:150px}.sidebar-product{margin:10px 0}.sidebar-product img{border:1px solid #f3ead3;border-radius:15px;box-sizing:border-box}.sidebar-product a{color:#1873e6;font-weight:500;display:block}.heading{margin-bottom:15px;font-weight:bold}#photo{float:right}#photo img{border-radius:50%;border:1px solid #f2f2f2}#aboutdesc p{margin-top:0}.testimonials-sbar{padding:20px 17px;margin:30px 0;border-radius:15px;border:1px solid #f2f2f2}.testimonials-sbar p{line-height:1.45;margin-bottom:0}p.testimonials-sbar-by{margin:1em 0;font-weight:600;color:#58543c}.view-testimonials{display:block;border-radius:3px;border:1px solid;padding:10px 20px;cursor:pointer;color:#111;background-color:#ffb932;border-color:#ffc87a #e2a348 #da9d0a;text-align:center}.view-testimonials a{color:#111}.view-testimonials:hover{background-color:#fea700}#recommended{padding:20px 17px;margin:30px 0;border-radius:15px;border:1px solid #f2f2f2}#recommended ol{padding:0 0 0 20px}#recommended>ol li{margin:14px 0}#recommended ol li a{color:#2f2f2f;padding:2px 0}.sidebar-enquiry{margin-bottom:20px}#sidebar{width:350px;float:right;font-size:.95em;margin-top:20px}.related-articles{margin-bottom:40px;background-color:#f9f8f3;padding:5px 20px 20px 20px;border-radius:15px}ul.related-articles-list{list-style:none;padding:0}.related-articles-list li{margin:8px 0}ul.related-articles-list li:before{font-size:1.1em;content:'\2605';margin:0 10px 0 0;color:#ffb932}.related-articles-list a,.related-articles-list a:visited{color:#2f2f2f;line-height:1.6;padding:2px 0}.related-articles-list a:hover{color:#1a73e7}#tutorial-menu ul{margin:0;padding:0;list-style-type:none}.main-menu a{font-family:"Segoe UI",Optima,Helvetica,Arial,sans-serif;font-size:inherit;color:#000;display:block;line-height:1.4}.main-menu>li>a{font-size:initial;margin-top:1px;padding:8px 10px;color:#6e3f00;font-weight:bold}#tutorial-menu li a:hover{color:#2f20d1}.main-menu>li.cat-item:first-child{background:#ffe1a9;border-top-right-radius:15px;border-top-left-radius:15px}.main-menu>li.cat-item:first-child+li{background:#ffeaea}.main-menu>li.cat-item:first-child+li+li{background:#e6fff5}.main-menu>li.cat-item:first-child+li+li+li{background:#f1e7fe}.main-menu>li.cat-item:first-child+li+li+li+li{background:#feffde}.main-menu>li.cat-item:first-child+li+li+li+li+li{background:#e2e9f0}.main-menu>li.cat-item:first-child+li+li+li+li+li+li{background:#d3ffdb}.main-menu>li.cat-item:first-child+li+li+li+li+li+li+li{background:#eaf5ff}.main-menu>li.cat-item:first-child+li+li+li+li+li+li+li+li{background:#e6fff5}.main-menu>li.cat-item:first-child+li+li+li+li+li+li+li+li+li{background:#ffeaea}.main-menu>i.cat-item:first-child+li+li+li+li+li+li+li+li+li+li{background:#feffde}.sub-menu>li{background:#fff;margin:0 1px 0 5px;border-right:1px solid #f2f2f2}.sub-menu>li>a{background:#f9f9f9;border-bottom:1px solid #e0e0e0;padding:10px 10px 10px 22px;position:relative;font-size:inherit}.sub-menu>li>a:before{position:absolute;top:18px;left:10px;content:'';display:block;width:0;height:0;border:4px solid;border-color:transparent transparent transparent #646464}.sub-menu>li.taxonomy-active>a:before{display:inline-flex;content:'';position:absolute;top:18px;left:10px}#tutorial-menu ul.post-list{margin-top:10px;background-color:#fff;border-bottom:1px solid #e0e0e0}.post-list>li{padding:6px 10px 6px 22px}.post-list>li>a{color:#000}#tutorial-menu li.current-post{font-weight:bold;color:#2f2f2f}#comment{width:525px;padding:10px}div#respond{padding:18px;border:1px #ececec solid;background-color:white;border-radius:15px;box-sizing:border-box;line-height:19px;color:#333;margin-bottom:20px;overflow:auto}.commentlist li ul li{background-color:#f3f2f1;border:1px solid #e5e4e2;padding-bottom:10px;margin-bottom:10px;margin-top:13px}.commentlist li ul li ul li{background-color:white}ul.comment-list,.comment-list ul{list-style-type:none}ul.comment-list{padding-left:0}.comment-body{padding:20px 0 20px 0}.comment-list li .says{display:none}.comment-meta,.comment-meta a{color:#565656;font-size:.9em}.reply a{border:1px solid #d5d9d9;border-radius:25px;display:inline-block;padding:6px 35px;color:#2f2f2f}#tutorial .reply a:hover{text-decoration:none;background-color:#fffaec}div#respond label{display:block;width:auto}div#respond input{padding:8px;border-radius:3px;border:1px solid #ccc;width:185px}div#respond textarea{padding:8px;border-radius:3px;border:1px solid #ccc}div#respond textarea{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%}div#respond input#submit{background-color:#32bbff;width:203px;color:#0c0c0c;border:1px solid #30b2f3;border-radius:3px;padding:8px 30px;cursor:pointer}div#respond input#submit:hover{background-color:#2bb0f3}div#respond p{margin:10px 0}p.comment-notes{display:none}.commentlist .bypostauthor,.comment-list li ul.children li.bypostauthor{background-color:#f9f8f3;padding:0 20px;border-radius:15px}span.product-price{font-size:1.5em;font-weight:bold;margin:0 20px 0 0}.small-info{font-size:.8em;color:#565656}.buy-now-btn,.buy-now-btn:visited{vertical-align:middle;display:inline-block;border-radius:3px;border:1px solid;padding:8px 38px;cursor:pointer;color:#111;font-size:.95em;background-color:#ffb932;border-color:#ffc87a #e2a348 #da9d0a}.buy-now-btn:hover{background-color:#fea700}.m-l-30{margin-left:30px}a.live-preview-btn{padding:8px 4px 8px 4px;color:#262626;display:inline-block;width:130px;text-align:center;border-radius:50px;border:1px solid;position:relative;background-color:#fff;border-color:#8b9092}a.live-preview-btn:hover{background-color:#ececec}.inline-block{display:inline-block}.pd-15{padding-left:15px}.shop-footer-common{margin-top:20px;overflow:auto;float:right}.shop-footer-common a{color:#555;display:inline-block;margin:8px 10px}.shop-footer-common .shop-doc-nav-links{float:none;border-bottom:1px solid #e6e6e6;padding-bottom:5px;margin-bottom:4px}.shop-footer-common .policy-doc-nav{float:right;text-align:left}#expand-sub-menu-icon{display:inline-block;vertical-align:middle}.text-left{text-align:left}.text-right{text-align:right}.comment-form-url{display:none}#wait_approval{margin:40px 0 20px;font-size:.9em;border-radius:3px;padding:8px 15px;background-color:#a8ebc4;border-color:#9be8bc;color:#1b7943}.float-right{float:right}.float-left{float:left}.small-note{font-size:.8em;color:#757575;margin-top:5px}.svg-icon{vertical-align:middle;display:inline-block;fill:#a7a7a7}.code-heading{font-size:1.2em;font-weight:bold;font-family:monospace;margin-top:2em}.recent-posts{max-width:660px}.width-auto{width:auto}.display-none{display:none}.sidebar-subscribe{border:1px solid #f2f2f2;padding:20px 17px;margin-bottom:30px;border-radius:15px}a.signup-btn{background-color:#fd0;padding:5px 20px;border-radius:4px;color:#000;font-family:charter,Georgia,Cambria,"Times New Roman",Times,serif}.txt-tweet{background:#dcf1ff;padding:10px;border-radius:3px}#saas-content{line-height:1.45;border:#e0d8c2 1px solid;padding:20px;margin-bottom:20px;border-radius:15px;text-align:center}#saas-content #product-title{font-weight:bold}#saas-content #product-photo{width:200px;margin:10px auto}#saas-content a.signup-btn{font-family:unset}.sidebar-product .product-link{margin-bottom:8px}#social-icon{float:right;padding:20px 20px 20px 0;text-align:right;position:-webkit-sticky;position:sticky;top:0}#social-icon .heading{font-size:.9em;border:0}#social-icon ul{padding:0;margin:0}#social-icon li{list-style:none;line-height:1.8em}.facebook-social-link{background:#4267b2}.twitter-social-link{background:#1da1f2}.linkedin-social-link{background:#0077b5}.social-link{color:#FFF !important;padding:0 !important;border-radius:20px;margin:0 0 17px 0;display:inline-block;font-weight:bold}.social-link img{vertical-align:middle}.social-link span{display:inline-block;position:relative;padding:3px 20px 3px 44px}.social-link span:hover{color:#e2fe00}.linkedin-social-img:before{background:url(/wp-content/themes/solandra/images/sprite.png?v=301118) no-repeat -48px -24px;height:24px;width:24px;display:inline-flex;content:'';position:absolute;top:5px;left:5px}.twitter-social-img:before{background:url(/wp-content/themes/solandra/images/sprite.png?v=301118) no-repeat -24px -24px;height:24px;width:24px;display:inline-flex;content:'';position:absolute;top:5px;left:5px}.facebook-social-img:before{background:url(/wp-content/themes/solandra/images/sprite.png?v=301118) no-repeat -0 -24px;height:24px;width:24px;display:inline-flex;content:'';position:absolute;top:5px;left:5px}.social-link img{vertical-align:middle}#site_header .search-container{display:inline-block;margin:17px 0 17px 20px}.search-form{display:inline}button.search-button{border:0;height:12px;width:13px;background:url(/wp-content/themes/solandra/images/sprite.png?v=301118) no-repeat -76px -30px;display:inline-block;vertical-align:middle;cursor:pointer;padding:0}@media screen and (min-width:1071px) and (max-width:1215px){#tutorial{width:540px}#tutorial-body{width:790px}#sidebar{width:235px}.content{width:1040px}}@media screen and (min-width:1015px) and (max-width:1070px){#tutorial-menu{width:227px}#tutorial{width:500px}#tutorial-body{width:742px}#sidebar{width:227px}.content{width:984px}}@media screen and (min-width:966px) and (max-width:1014px){#site_header .search{width:100%}#tutorial-menu{width:350px}#social-icon{display:none}#tutorial{width:570px}#tutorial-body{width:570px}#sidebar{width:350px}.content{width:935px}.search{width:460px}}@media screen and (min-width:756px) and (max-width:965px){#site_header .search{width:100%}#tutorial-menu{width:460px}#social-icon{display:none}#tutorial{width:460px}#tutorial-body{width:460px}#sidebar{width:250px}.content{width:725px}.search{width:460px}#logo-text{display:none}#article{width:460px}#aside{width:250px}.two-column-content{width:725px}}@media screen and (max-width:755px){#site_header .search-container{float:right}#site_header .search{width:100%}#tutorial-menu{width:350px}#social-icon{display:none}#tutorial{width:570px}#tutorial-body{width:570px;margin-top:50px}#sidebar{width:350px;clear:both;float:none}.content{width:570px}span.footer-contact-btn{display:block}#footer-contact-navigation{margin:20px 0 0 0}#expand-sub-menu-icon{position:absolute;left:0;top:60px;padding:2px 25px 2px 0;background:#f7f7f7;width:100%;text-align:center;box-sizing:border-box}.search{width:350px}.two-column-content{width:570px}#aside{float:none;clear:both}#article{margin-top:50px}}@media screen and (max-width:600px){#tutorial-menu{width:350px}#tutorial{width:auto;float:none;max-width:570px;padding-top:10px}#tutorial-body{float:none;width:100%}#sidebar{width:auto;max-width:350px;clear:both;float:none}.content{width:auto}a.demo-download-icon{margin:0}.prettyprint{max-height:500px;font-size:1.1em}.two-column-content{width:auto}#article{width:auto;max-width:570px}#aside{width:auto;max-width:350px;float:none;clear:both}}@media screen and (max-width:450px){#tutorial-menu{width:auto;max-width:350px}.search{width:100%}.btn-get-license{margin-left:0;margin-top:15px}#logo-text{display:none}#site_header .search-container{margin-right:0}#site_header #header-contact-navigation{padding:8px 15px}}</style></head>
+<body>
+<div id="site_header">
+    <div class="content">
+        <a href="/" title="Helping you build websites"><svg version="1.0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.000000 68.000000"
+ preserveAspectRatio="xMidYMid meet" alt="Phppot Logo" id="site-logo">
+<g transform="translate(0.000000,68.000000) scale(0.100000,-0.100000)"
+fill="#000000" stroke="none">
+<path d="M468 583 c-42 -91 -118 -306 -118 -334 0 -14 19 -29 36 -29 2 0 15
+22 28 49 33 65 73 111 97 111 10 0 19 -1 19 -2 0 -2 -9 -32 -20 -67 -25 -79
+-20 -101 24 -101 39 0 77 33 58 52 -8 8 -15 8 -26 -1 -26 -22 -26 5 -1 74 28
+73 26 100 -6 108 -33 9 -63 -7 -103 -55 l-37 -43 27 75 c14 41 38 100 51 130
+57 127 56 120 32 120 -16 0 -29 -19 -61 -87z"/>
+<path d="M1521 576 c-6 -7 -22 -38 -35 -69 -23 -50 -30 -57 -66 -67 -49 -13
+-58 -45 -10 -38 17 3 30 4 30 4 0 -1 -7 -23 -15 -50 -28 -93 -17 -136 36 -136
+36 0 89 44 73 60 -8 8 -18 9 -30 2 -45 -23 -55 11 -28 91 15 45 17 47 55 47
+32 0 39 3 39 20 0 15 -7 20 -29 20 l-30 0 25 55 c13 31 24 57 24 59 0 11 -30
+13 -39 2z"/>
+<path d="M129 470 c-14 -8 -15 -16 -6 -47 9 -34 3 -57 -51 -218 -34 -99 -58
+-183 -54 -187 23 -22 34 -7 67 89 57 171 131 293 175 293 26 0 33 -32 17 -72
+-19 -45 -45 -66 -87 -70 -24 -2 -36 -9 -38 -20 -3 -15 4 -18 42 -18 78 0 146
+80 146 172 0 81 -53 93 -124 28 l-43 -40 -6 41 c-6 49 -16 61 -38 49z"/>
+<path d="M669 470 c-14 -8 -15 -16 -6 -47 9 -34 3 -57 -51 -218 -34 -99 -58
+-183 -54 -187 23 -22 34 -7 67 89 57 171 131 293 175 293 26 0 33 -32 17 -72
+-19 -45 -45 -66 -87 -70 -24 -2 -36 -9 -38 -20 -3 -15 4 -18 42 -18 78 0 146
+80 146 172 0 81 -53 93 -124 28 l-43 -40 -6 41 c-6 49 -16 61 -38 49z"/>
+<path d="M959 470 c-14 -8 -15 -16 -6 -47 9 -34 3 -57 -51 -218 -34 -99 -58
+-183 -54 -187 23 -22 34 -7 67 89 57 171 131 293 175 293 26 0 33 -32 17 -72
+-19 -45 -45 -66 -87 -70 -24 -2 -36 -9 -38 -20 -3 -15 4 -18 42 -18 78 0 146
+80 146 172 0 81 -53 93 -124 28 l-43 -40 -6 41 c-6 49 -16 61 -38 49z"/>
+<path d="M1275 440 c-28 -11 -72 -60 -84 -93 -18 -48 -13 -86 15 -114 21 -21
+32 -24 62 -19 57 9 94 53 99 118 4 59 -5 82 -30 72 -13 -5 -16 -14 -11 -45 5
+-27 2 -46 -10 -64 -30 -46 -76 -26 -76 33 0 42 46 92 84 92 16 0 26 6 26 15 0
+17 -41 20 -75 5z"/>
+</g>
+</svg>
+</a>
+        <div class="search-container">
+            <form method="get" action="/" class="search-form">
+                <input name="s" class="search"
+                    placeholder="Search Phppot"
+                    title="Search Phppot"
+                    autocomplete="off">
+                <button type="submit"
+                    title="Search Phppot"
+                    class="search-button"></button>
+            </form>
+        </div>
+        <div class="header-link-container">
+            <div id="expand-sub-menu-icon">
+                <a class="testimonial-icon" href="/demo/">Demo</a> <a
+                    class="testimonial-icon" href="/about/">About</a> <a
+                    id="header-contact-navigation" href="/contact/">Contact
+                    Me</a>
+            </div>
+        </div>
+    </div>
+</div>    <div class="content">
+        <div id="tutorial-body">
+            <div id="tutorial">
+                <h1>Create JavaScript Shopping Cart with Add to Cart Code</h1>
+                <div class='modified-on'>
+                    by <a href="/about/">Vincy</a>. Last modified on September 27th, 2022.</div>
+<p>Do you want a shopping cart built entirely in JavaScript? With session / storage everything! With no PHP or server-side code, then read on and rock on.</p>
+<p>Earlier I have written a lot of PHP shopping cart code using server-side sessions. Now let us see a similar concept on the client-side to build a JavaScript shopping cart.</p>
+<p>The <strong>Window.sessionStorage</strong> is the right solution to create a session-based shopping cart. It is free from PHP or other server-side code, unlike <a href="https://phppot.com/php/simple-php-shopping-cart/">previous eCommerce examples</a>.</p>
+<h2>What is sessionStorage?</h2>
+<p>The sessionStorage is one of the <a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">standard JavaScript concepts</a> of WebStorage API. It is a client-side session object that tends to set, get and clear data with respect to it. This object&#8217;s persistence is based on the browser&#8217;s session availability.</p>
+<h2>How to build a JavaScript shopping cart using sessionStorage?</h2>
+<p>The JavaScript shopping cart implementation is possible with sessionStorage like as below. The below table shows the mapping of sessionStorage capability with shopping cart features.</p>
+<ul>
+<li><em>setItem()</em> &#8211; Add to cart from the shopping gallery by referring to the purchased product id. It also is used to edit a cart item by replacing the value array.</li>
+<li><em>getItem()</em> &#8211; Read and display the cart items by iterating the sessionStorage object array.</li>
+<li><em>removeItem() </em>&#8211; Remove a single item from the cart by specifying the item index.</li>
+<li><em>clear()</em> &#8211; Empty the cart by <a href="https://phppot.com/php/php-unlink-vs-unset/">unsetting</a> the sessionStorage instance.</li>
+</ul>
+<h2>Shopping cart &#8211; checkout &#8211; payment</h2>
+<p>This section shows the execution flow of the JavaScript shopping cart code. It covers &#8220;add to cart&#8221; to check out and to the payment step.</p>
+<ul>
+<li>Step 1: On &#8220;add to cart&#8221; action the sessionStorage object builds the <a href="https://phppot.com/php/generate-ecommerce-purchase-invoice-pdf-using-php-script/">purchased item</a> array.</li>
+<li>Step 2: Then, it gets the buyer&#8217;s payment details on a checkout form.</li>
+<li>Step 3: Can renders payment options like PayPal with the request parameter array. This array contains purchased items and the buyer&#8217;s payment details.</li>
+<li>Step 4: An alternate to step 3, that is, an email checkout. This suits the shopping cart not dealing with instant payment on the flow.</li>
+</ul>
+<p>In this tutorial, we will see steps 1 and 2 of a JavaScript shopping cart. You can integrate with the payment options coded with different articles. Example: <a href="https://phppot.com/php/how-to-integrate-paypal-checkout-in-ecommerce-website/">Integrate PayPal checkout into the eCommerce website</a>.</p>
+<h2>JavaScript shopping cart example</h2>
+<p>This example provides bare minimal features of a Javascript shopping cart. It supports performing the &#8220;<a href="https://phppot.com/php/add-multiple-bulk-product-into-shopping-cart-using-php/">add to cart</a>&#8221; and &#8220;clear cart&#8221; functionalities via JavaScript.</p>
+<p>This code also builds and supplies product gallery HTML from JavaScript.</p>
+<p>It is a <a href="https://phppot.com/php/create-ajax-based-event-management-system-with-bootstrap/">jQuery-based client-side implementation</a> with the use of JavaScript sessionStorage.</p>
+<h2>HTML code to display shopping cart UI</h2>
+<p>This HTML code has placeholders to load UI for the following from JavaScript.</p>
+<ul>
+<li><a href="https://phppot.com/php/top-10-factors-in-ecommerce-shopping-cart-software-gallery-design/">Product gallery</a>.</li>
+<li>Cart items in a tabular view.</li>
+</ul>
+<p>When this document is ready, a JavaScript code prepares HTML for the product grid.</p>
+<p>In the product grid, it contains inputs to select a quantity and post to perform the &#8220;add to cart&#8221; operation.</p>
+<p>The <em>cart.js</em> handles the client-side code to perform the <a href="https://en.wikipedia.org/wiki/E-commerce" target="_blank" rel="noopener">shopping cart operations</a>. It will be included in this template.</p>
+<pre class="prettyprint"><code class="language-html">&lt;div class="container"&gt;
+		&lt;!--  Shopping cart table wrapper  --&gt;
+		&lt;div id="shopping-cart"&gt;
+			&lt;div class="txt-heading"&gt;
+				&lt;h1&gt;Shopping cart&lt;/h1&gt;
+			&lt;/div&gt;
+			&lt;a onClick="emptyCart()" id="btnEmpty"&gt;Empty Cart&lt;/a&gt;
+			&lt;table class="tbl-cart" cellpadding="10" cellspacing="1"&gt;
+				&lt;thead&gt;
+					&lt;tr&gt;
+						&lt;th&gt;Name&lt;/th&gt;
+						&lt;th class='text-right' width="10%"&gt;Unit Price&lt;/th&gt;
+						&lt;th class='text-right' width="5%"&gt;Quantity&lt;/th&gt;
+						&lt;th class='text-right' width="10%"&gt;Sub Total&lt;/th&gt;
+					&lt;/tr&gt;
+				&lt;/thead&gt;
+				&lt;!--  Cart table to load data on "add to cart" action --&gt;
+				&lt;tbody id="cartTableBody"&gt;
+				&lt;/tbody&gt;
+				&lt;tfoot&gt;
+					&lt;tr&gt;
+						&lt;td class="text-right"&gt;Total:&lt;/td&gt;
+						&lt;td id="itemCount" class="text-right" colspan="2"&gt;&lt;/td&gt;
+						&lt;td id="totalAmount" class="text-right"&gt;&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tfoot&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
+		&lt;!-- Product gallery shell to load HTML from JavaScript code --&gt;
+		&lt;div id="product-grid"&gt;
+			&lt;div class="txt-heading"&gt;
+				&lt;h1&gt;Products&lt;/h1&gt;
+			&lt;/div&gt;
+			&lt;div id="product-item-container"&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+</code></pre>
+<h2>Client-side code to perform JavaScript shopping cart actions</h2>
+<p>This script performs the following.</p>
+<ol>
+<li>Load product gallery from <a href="https://phppot.com/php/php-json-array-merge/">JSON data</a>.</li>
+<li>&#8220;Add to cart&#8221; action to move a product into the cart table.</li>
+<li>Load and change the shopping cart status on each cart action.</li>
+<li>Update total cart items and total price on each change.</li>
+<li>Empty the cart by <a href="https://phppot.com/php/php-session-time-set-unset/">clearing the session</a>.</li>
+</ol>
+<h3>Load product gallery from JSON data</h3>
+<p>The <em><code class="language-javascript">productItem</code></em> contains the product JSON data. It contains a row of product data with name, price and photo path.</p>
+<p>The <em><code class="language-javascript">showProductGallery</code></em> method iterates this <em><code class="language-javascript">productItem</code></em> JSON and builds the product gallery HTML.</p>
+<p>In this gallery, each product tile contains the option &#8220;add to cart&#8221;. It moves the selected product to the cart session by clicking the &#8220;Add to cart&#8221; button.</p>
+<p>The JavaScript code uses <a href="https://phppot.com/javascript/for-each-javascript/">for each loop</a> to iterate the<em><code class="language-javascript">productItem</code></em> JSON.</p>
+<pre class="prettyprint"><code class="language-javascript">$(document).ready(function() {
+	var productItem = [{
+			productName: "FinePix Pro2 3D Camera",
+			price: "1800.00",
+			photo: "camera.jpg"
+		},
+		{
+			productName: "EXP Portable Hard Drive",
+			price: "800.00",
+			photo: "external-hard-drive.jpg"
+		},
+		{
+			productName: "Luxury Ultra thin Wrist Watch",
+			price: "500.00",
+			photo: "laptop.jpg"
+		},
+		{
+			productName: "XP 1155 Intel Core Laptop",
+			price: "1000.00",
+			photo: "watch.jpg"
+		}];
+	showProductGallery(productItem);
+});
+
+function showProductGallery(product) {
+	//Iterate javascript shopping cart array
+	var productHTML = "";
+	product.forEach(function(item) {
+		productHTML += '&lt;div class="product-item"&gt;'+
+					'&lt;img src="product-images/' + item.photo + '"&gt;'+
+					'&lt;div class="productname"&gt;' + item.productName + '&lt;/div&gt;'+
+					'&lt;div class="price"&gt;$&lt;span&gt;' + item.price + '&lt;/span&gt;&lt;/div&gt;'+
+					'&lt;div class="cart-action"&gt;'+
+						'&lt;input type="text" class="product-quantity" name="quantity" value="1" size="2" /&gt;'+
+						'&lt;input type="submit" value="Add to Cart" class="add-to-cart" onClick="addToCart(this)" /&gt;'+
+					'&lt;/div&gt;'+
+				'&lt;/div&gt;';
+				"&lt;tr&gt;";
+		
+	});
+	$('#product-item-container').html(productHTML);
+}
+
+</code></pre>
+<h3>&#8220;Add to cart&#8221; action to move a product into the cart table</h3>
+<p>This &#8220;add to cart&#8221; JavaScript handler is a core functionality of the example. This code initiates the JavaScript sessionStorage object.</p>
+<p>On clicking the &#8220;Add to cart&#8221; button on the product tile, this function is invoked.</p>
+<p>It reads the product details from the <a href="https://phppot.com/jquery/using-jqgrid-control-with-php/">product grid</a> where the clicked &#8220;Add to cart&#8221; is placed. For example, it gets the product name, quantity and other details.</p>
+<p>Using these details, this code prepares the JSON instance of the cart item row. Then, it appends the newly added items to the existing cart sessionStorage object.</p>
+<pre class="prettyprint"><code class="language-javascript">function addToCart(element) {
+	var productParent = $(element).closest('div.product-item');
+
+	var price = $(productParent).find('.price span').text();
+	var productName = $(productParent).find('.productname').text();
+	var quantity = $(productParent).find('.product-quantity').val();
+
+	var cartItem = {
+		productName: productName,
+		price: price,
+		quantity: quantity
+	};
+	var cartItemJSON = JSON.stringify(cartItem);
+
+	var cartArray = new Array();
+	// If javascript shopping cart session is not empty
+	if (sessionStorage.getItem('shopping-cart')) {
+		cartArray = JSON.parse(sessionStorage.getItem('shopping-cart'));
+	}
+	cartArray.push(cartItemJSON);
+
+	var cartJSON = JSON.stringify(cartArray);
+	sessionStorage.setItem('shopping-cart', cartJSON);
+	showCartTable();
+}
+</code></pre>
+<h3>Empty the cart by clearing the session</h3>
+<p>This JavaScript shopping cart code contains an option to empty the cart table.</p>
+<p>It explicitly clears the sessionStorage instance created to have the cart items.</p>
+<p>At the end of both &#8220;Add to cart&#8221; and the &#8220;clear cart&#8221; actions, <a href="https://phppot.com/php/ajax-cart-edit-in-php-shopping-cart/">the cart table UI is rebuilt with the latest</a> session data.</p>
+<p>The <code class="language-javascript">showCartTable</code> function is called for updating the cart table UI and the total count.</p>
+<pre class="prettyprint"><code class="language-javascript">function emptyCart() {
+	if (sessionStorage.getItem('shopping-cart')) {
+		// Clear JavaScript sessionStorage by index
+		sessionStorage.removeItem('shopping-cart');
+		showCartTable();
+	}
+}
+</code></pre>
+<h3>Load cart row, item count, the total amount from sessionStorage object</h3>
+<p>This code displays the logic of <code class="language-javascript">showCartTable()</code> to rebuild cart HTML and update UI.</p>
+<p>It initiates variables to hold the following data. These are used in the JavaScript shopping cart code.</p>
+<ul>
+<li>Cart table HTML.</li>
+<li>A total number of items added to the cart.</li>
+<li>A total amount of the purchased cart items.</li>
+</ul>
+<p>It checks cart sessionStorage and iterates the array if exists. During the iteration, it builds the cart table HTML and computes the total count and price.</p>
+<p>The cart sessionStorage data is pushed to the UI via this JavaScript function. It reflects the latest cart state to the end-users.</p>
+<pre class="prettyprint"><code class="language-javascript">function showCartTable() {
+	var cartRowHTML = "";
+	var itemCount = 0;
+	var grandTotal = 0;
+
+	var price = 0;
+	var quantity = 0;
+	var subTotal = 0;
+
+	if (sessionStorage.getItem('shopping-cart')) {
+		var shoppingCart = JSON.parse(sessionStorage.getItem('shopping-cart'));
+		itemCount = shoppingCart.length;
+
+		//Iterate javascript shopping cart array
+		shoppingCart.forEach(function(item) {
+			var cartItem = JSON.parse(item);
+			price = parseFloat(cartItem.price);
+			quantity = parseInt(cartItem.quantity);
+			subTotal = price * quantity
+
+			cartRowHTML += "&lt;tr&gt;" +
+				"&lt;td&gt;" + cartItem.productName + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;$" + price.toFixed(2) + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;" + quantity + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;$" + subTotal.toFixed(2) + "&lt;/td&gt;" +
+				"&lt;/tr&gt;";
+
+			grandTotal += subTotal;
+		});
+	}
+
+	$('#cartTableBody').html(cartRowHTML);
+	$('#itemCount').text(itemCount);
+	$('#totalAmount').text("$" + grandTotal.toFixed(2));
+}
+</code></pre>
+<h2>JavaScript shopping cart output screenshot</h2>
+<p>The output will be familiar to whom already have seen my older shopping cart code created in PHP.</p>
+<p>It is designed as a <a href="https://phppot.com/php/one-page-checkout-script-free-with-example-template-in-php/">single-page shopping cart solution</a>. It shows both the gallery and cart on the same page.</p>
+<p><img loading="lazy" class="alignnone size-large wp-image-16947" src="https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output-550x416.jpg" alt="javascript shopping cart output" width="550" height="416" srcset="https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output-550x416.jpg 550w, https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output-300x227.jpg 300w, https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output-768x581.jpg 768w, https://phppot.com/wp-content/uploads/2022/05/javascript-shopping-cart-output.jpg 800w" sizes="(max-width: 550px) 100vw, 550px" /></p>
+<h2>Persistent JavaScript shopping cart with localStorage instance</h2>
+<p>The WebStorage API’s sessionStorage will be expired when the browser is closed. This API provides one more storage object which is localStorage.</p>
+<p>The localStorage object is similar to sessionStorage. The only difference is that the localStorage keeps data until explicit action.</p>
+<p>So, this concept helps <a href="https://phppot.com/php/how-to-build-a-persistent-shopping-cart-in-php/">to have a persistent cart</a>. That is to retain the customers’ cart items even if they closed the browser.</p>
+<p>The source code uses sessionStorage for this JavaScript shopping cart code. Include the following file instead of cart.js if you want to use the localStorage object.</p>
+<p class="code-heading">cart-local-storage.js</p>
+<pre class="prettyprint"><code class="language-javascript">$(document).ready(function() {
+	var productItem = [{
+			productName: "FinePix Pro2 3D Camera",
+			price: "1800.00",
+			photo: "camera.jpg"
+		},
+		{
+			productName: "EXP Portable Hard Drive",
+			price: "800.00",
+			photo: "external-hard-drive.jpg"
+		},
+		{
+			productName: "Luxury Ultra thin Wrist Watch",
+			price: "500.00",
+			photo: "laptop.jpg"
+		},
+		{
+			productName: "XP 1155 Intel Core Laptop",
+			price: "1000.00",
+			photo: "watch.jpg"
+		}];
+	showProductGallery(productItem);
+	showCartTable();
+});
+
+function addToCart(element) {
+	var productParent = $(element).closest('div.product-item');
+
+	var price = $(productParent).find('.price span').text();
+	var productName = $(productParent).find('.productname').text();
+	var quantity = $(productParent).find('.product-quantity').val();
+
+	var cartItem = {
+		productName: productName,
+		price: price,
+		quantity: quantity
+	};
+	var cartItemJSON = JSON.stringify(cartItem);
+
+	var cartArray = new Array();
+	// If javascript shopping cart session is not empty
+	if (localStorage.getItem('shopping-cart')) {
+		cartArray = JSON.parse(localStorage.getItem('shopping-cart'));
+	}
+	cartArray.push(cartItemJSON);
+
+	var cartJSON = JSON.stringify(cartArray);
+	localStorage.setItem('shopping-cart', cartJSON);
+	showCartTable();
+}
+
+function emptyCart() {
+	if (localStorage.getItem('shopping-cart')) {
+		// Clear JavaScript localStorage by index
+		localStorage.removeItem('shopping-cart');
+		showCartTable();
+	}
+}
+
+function removeCartItem(index) {
+	if (localStorage.getItem('shopping-cart')) {
+		var shoppingCart = JSON.parse(localStorage.getItem('shopping-cart'));
+		localStorage.removeItem(shoppingCart[index]);
+		showCartTable();
+	}
+}
+
+function showCartTable() {
+	var cartRowHTML = "";
+	var itemCount = 0;
+	var grandTotal = 0;
+
+	var price = 0;
+	var quantity = 0;
+	var subTotal = 0;
+
+	if (localStorage.getItem('shopping-cart')) {
+		var shoppingCart = JSON.parse(localStorage.getItem('shopping-cart'));
+		itemCount = shoppingCart.length;
+
+		//Iterate javascript shopping cart array
+		shoppingCart.forEach(function(item) {
+			var cartItem = JSON.parse(item);
+			price = parseFloat(cartItem.price);
+			quantity = parseInt(cartItem.quantity);
+			subTotal = price * quantity
+
+			cartRowHTML += "&lt;tr&gt;" +
+				"&lt;td&gt;" + cartItem.productName + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;$" + price.toFixed(2) + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;" + quantity + "&lt;/td&gt;" +
+				"&lt;td class='text-right'&gt;$" + subTotal.toFixed(2) + "&lt;/td&gt;" +
+				"&lt;/tr&gt;";
+
+			grandTotal += subTotal;
+		});
+	}
+
+	$('#cartTableBody').html(cartRowHTML);
+	$('#itemCount').text(itemCount);
+	$('#totalAmount').text("$" + grandTotal.toFixed(2));
+}
+
+
+function showProductGallery(product) {
+	//Iterate javascript shopping cart array
+	var productHTML = "";
+	product.forEach(function(item) {
+		productHTML += '&lt;div class="product-item"&gt;'+
+					'&lt;img src="product-images/' + item.photo + '"&gt;'+
+					'&lt;div class="productname"&gt;' + item.productName + '&lt;/div&gt;'+
+					'&lt;div class="price"&gt;$&lt;span&gt;' + item.price + '&lt;/span&gt;&lt;/div&gt;'+
+					'&lt;div class="cart-action"&gt;'+
+						'&lt;input type="text" class="product-quantity" name="quantity" value="1" size="2" /&gt;'+
+						'&lt;input type="submit" value="Add to Cart" class="add-to-cart" onClick="addToCart(this)" /&gt;'+
+					'&lt;/div&gt;'+
+				'&lt;/div&gt;';
+				"&lt;tr&gt;";
+		
+	});
+	$('#product-item-container').html(productHTML);
+}
+
+</code></pre>
+<h2>Security caution</h2>
+<p>Until the &#8220;add to cart&#8221; step, the client-side handling is fine. When proceeding with checkout, it is preferable to use server-side middleware.</p>
+<p>It is for safety purposes to handle security loopholes. It will do the sanitization, validation of data authenticity and more verification process.</p>
+<h2>Conclusion</h2>
+<p>So, we have created a JavaScript shopping cart code using the sessionStorage object. And also, we saw one more option to add the cart item persistency with the localStorage object.</p>
+<p>The client-side shopping cart implementation is not a complete solution. But, it has the advantages of minimalism. It will suit the thin static cart available online.</p>
+<p>It is suitable for the shops having client-side integrations connected with <a href="https://phppot.com/php/stripe-one-time-payment-with-prebuilt-hosted-checkout-in-php/">hosted services</a>.<br />
+<a class="download" href="/downloads/javascript-shopping-cart.zip">Download</a></p>
+
+<div id="comments" class="comments-area">
+
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="/javascript/javascript-shopping-cart/#respond" style="display:none;">Cancel reply</a></small></h3><form action="https://phppot.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment"><label for="comment">Comment</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-author"><label for="author">Name <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" aria-describedby="email-notes" required='required' /></p>
+<p class="comment-form-url"><label for="url">Leave this empty <span class="required">*</span></label> <input id="url" name="url" type="text" value="" size="30" maxlength="245"></p>
+<p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Post Comment" /> <input type='hidden' name='comment_post_ID' value='16916' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="51a566d445" /></p><p style="display: none !important;"><label>&#916;<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js_1" name="ak_js" value="62"/><script>document.getElementById( "ak_js_1" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>	</div><!-- #respond -->
+	
+</div><!-- #comments -->
+    <div class="related-articles">
+                    <h2>Popular Articles</h2>
+                    <ul class="related-articles-list">
+                        <li><a href="https://phppot.com/php/one-page-checkout-script-free-with-example-template-in-php/">One Page Checkout Script Free with Example Template in PHP</a></li>
+                        <li><a href="https://phppot.com/php/generate-ecommerce-purchase-invoice-pdf-using-php-script/">Generate eCommerce Purchase Invoice PDF using PHP Script</a></li>
+                        <li><a href="https://phppot.com/php/shopify-like-sticky-shopping-cart-in-php/">Shopify Like Shopping Cart with Sticky Checkout using PHP</a></li>
+                    </ul>
+                </div>
+		<div class="search-container">
+                    <form method="get" action="/" class="search-form">
+                        <input name="s" class="search"
+                            placeholder="Search articles"
+                            title="Search articles" autocomplete="off">
+                        <button type="submit" title="Search articles"
+                            class="search-button"></button>
+                    </form>
+                </div>
+                <p>
+                    <a href="#top" class="top">&#8593; Back to Top</a>
+                </p>
+            </div>
+            			<div id="tutorial-menu">
+	<ul class="main-menu"><li class="cat-item cat-item-72"><a href="https://phppot.com/menu/php/">PHP</a><ul class="sub-menu"><li class="cat-item cat-item-106 "><a href="https://phppot.com/menu/php/learn-php/">Learn PHP</a></li><li class="cat-item cat-item-59 "><a href="https://phppot.com/menu/php/php-introduction/">PHP Introduction</a></li><li class="cat-item cat-item-26 "><a href="https://phppot.com/menu/php/php-basics/">PHP Basics</a></li><li class="cat-item cat-item-57 "><a href="https://phppot.com/menu/php/types-variables-operators/">Types, Variables &amp; Operators</a></li><li class="cat-item cat-item-58 "><a href="https://phppot.com/menu/php/php-strings/">PHP Strings</a></li><li class="cat-item cat-item-22 "><a href="https://phppot.com/menu/php/php-arrays/">PHP Arrays</a></li><li class="cat-item cat-item-61 "><a href="https://phppot.com/menu/php/php-functions/">PHP Functions</a></li><li class="cat-item cat-item-35 "><a href="https://phppot.com/menu/php/php-oops/">PHP OOPS</a></li><li class="cat-item cat-item-189 "><a href="https://phppot.com/menu/php/contact-form/">Contact Form</a></li><li class="cat-item cat-item-194 taxonomy-active"><a href="https://phppot.com/menu/php/php-shopping-cart/">PHP Shopping Cart</a><ul class="post-list"><li><a class= "post-menu" href="https://phppot.com/php/simple-php-shopping-cart/">Simple PHP Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/responsive-php-shopping-cart/">Responsive PHP Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/php-shopping-cart-with-jquery-ajax/">PHP Shopping Cart with jQuery AJAX</a></li><li><a class= "post-menu" href="https://phppot.com/php/php-shopping-cart-without-database/">PHP Shopping Cart without Database</a></li><li><a class= "post-menu" href="https://phppot.com/php/how-to-build-a-persistent-shopping-cart-in-php/">How to Build a Persistent Shopping Cart in PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/add-multiple-bulk-product-into-shopping-cart-using-php/">Add Multiple (Bulk) Product into Shopping Cart using PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/enriched-responsive-shopping-cart-in-php/">Enriched Responsive Shopping Cart in PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/shopping-cart-product-quick-look-like-amazon/">Shopping Cart Product Quick Look like Amazon</a></li><li><a class= "post-menu" href="https://phppot.com/php/shopify-like-sticky-shopping-cart-in-php/">Shopify Like Shopping Cart with Sticky Checkout using PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/ajax-cart-edit-in-php-shopping-cart/">AJAX Cart Edit in PHP Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/php-shopping-cart-by-jquery-drag-and-drop/">PHP Shopping Cart by jQuery Drag and Drop</a></li><li><a class= "post-menu" href="https://phppot.com/php/php-shopping-cart-with-paypal-payment-gateway-integration/">PHP Shopping Cart with PayPal Payment Gateway Integration</a></li><li><a class= "post-menu" href="https://phppot.com/php/shopping-cart-item-quantity-increment-decrement-with-ajax/">Shopping Cart Item Quantity Increment Decrement with AJAX</a></li><li class="current-post">Create JavaScript Shopping Cart with Add to Cart Code</li><li><a class= "post-menu" href="https://phppot.com/php/responsive-product-gallery-for-shopping-cart/">Responsive Product Gallery for Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/shopping-cart-with-multi-tab-wizard-using-jquery-ajax/">Shopping Cart with Multi-Tab Wizard using jQuery AJAX</a></li><li><a class= "post-menu" href="https://phppot.com/php/better-customer-engagement-with-ecommerce-wishlist-implementation-for-shopping-cart/">Better Customer Engagement with eCommerce wishlist implementation for shopping cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/one-page-checkout-script-free-with-example-template-in-php/">One Page Checkout Script Free with Example Template in PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/single-product-ecommerce-website-with-email-checkout-in-php/">Single Product eCommerce Website with Email Checkout in PHP</a></li><li><a class= "post-menu" href="https://phppot.com/php/shopping-cart-software-product-quick-view-with-bootstrap-tooltip/">Shopping Cart Software Product Quick View with Bootstrap Tooltip</a></li><li><a class= "post-menu" href="https://phppot.com/php/zoom-for-product-images-in-php-shopping-cart/">Zoom for Product Images in PHP Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/top-10-factors-in-ecommerce-shopping-cart-software-gallery-design/">Top 10 Factors in eCommerce Shopping Cart Software Gallery Design</a></li><li><a class= "post-menu" href="https://phppot.com/php/bootstrap-ecommerce-product-category-subcategory-page-with-filter-and-navigation/">Bootstrap eCommerce Product Category Subcategory Page with Filter and Navigation</a></li><li><a class= "post-menu" href="https://phppot.com/php/live-search-bar-for-an-ecommerce-website-like-amazon/">Live Search Bar for an eCommerce Website like Amazon</a></li><li><a class= "post-menu" href="https://phppot.com/php/generate-ecommerce-purchase-invoice-pdf-using-php-script/">Generate eCommerce Purchase Invoice PDF using PHP Script</a></li><li><a class= "post-menu" href="https://phppot.com/php/bootstrap-ecommerce-recently-viewed-products-list-carousel/">Bootstrap eCommerce Recently Viewed Products List Carousel</a></li><li><a class= "post-menu" href="https://phppot.com/php/how-to-develop-ecommerce-software-with-discount-coupon/">How to Develop eCommerce Software with Discount Coupon</a></li><li><a class= "post-menu" href="https://phppot.com/php/ecommerce-software-product-gallery-slideshow-with-jquery-lightbox/">eCommerce Software Product Gallery Slideshow with jQuery Lightbox</a></li><li><a class= "post-menu" href="https://phppot.com/php/amazon-like-product-images-showcase-for-shopping-cart/">Amazon like Product Images Showcase for Shopping Cart</a></li><li><a class= "post-menu" href="https://phppot.com/php/bootstrap-cards-shopping-cart/">Bootstrap Cards for Shopping Cart eCommerce Gallery</a></li><li><a class= "post-menu" href="https://phppot.com/php/shipping-api-integration-in-php-with-australia-post-example/">Shipping API Integration in PHP with Australia Post Example</a></li></ul></li><li class="cat-item cat-item-193 "><a href="https://phppot.com/menu/php/payment-gateway/">Payment Gateway</a></li><li class="cat-item cat-item-190 "><a href="https://phppot.com/menu/php/php-login-registration/">PHP Login Registration</a></li><li class="cat-item cat-item-103 "><a href="https://phppot.com/menu/php/comments-system/">Comments System</a></li><li class="cat-item cat-item-31 "><a href="https://phppot.com/menu/php/php-forms/">PHP Forms</a></li><li class="cat-item cat-item-90 "><a href="https://phppot.com/menu/php/php-ajax/">PHP AJAX</a></li><li class="cat-item cat-item-195 "><a href="https://phppot.com/menu/php/php-json/">PHP JSON</a></li><li class="cat-item cat-item-198 "><a href="https://phppot.com/menu/php/php-csv/">PHP CSV</a></li><li class="cat-item cat-item-24 "><a href="https://phppot.com/menu/php/php-xml/">PHP XML</a></li><li class="cat-item cat-item-100 "><a href="https://phppot.com/menu/php/file-upload/">File Upload</a></li><li class="cat-item cat-item-161 "><a href="https://phppot.com/menu/php/file-import-export/">File Import Export</a></li><li class="cat-item cat-item-36 "><a href="https://phppot.com/menu/php/files-and-directories/">Files and Directories</a></li><li class="cat-item cat-item-78 "><a href="https://phppot.com/menu/php/advanced/">Advanced</a></li><li class="cat-item cat-item-89 "><a href="https://phppot.com/menu/php/restful-api/">RESTful API</a></li><li class="cat-item cat-item-15 "><a href="https://phppot.com/menu/php/php-databases/">PHP Databases</a></li><li class="cat-item cat-item-23 "><a href="https://phppot.com/menu/php/php-sessions-and-cookies/">PHP Sessions and Cookies</a></li><li class="cat-item cat-item-51 "><a href="https://phppot.com/menu/php/error-exception-handling/">Error and Exception Handling</a></li><li class="cat-item cat-item-45 "><a href="https://phppot.com/menu/php/php-date-time/">PHP Date Time</a></li><li class="cat-item cat-item-62 "><a href="https://phppot.com/menu/php/php-code-samples/">PHP Code Samples</a></li><li class="cat-item cat-item-96 "><a href="https://phppot.com/menu/php/library/">Library</a></li><li class="cat-item cat-item-88 "><a href="https://phppot.com/menu/php/php-freelancer/">PHP Freelancer</a></li></ul></li><li class="cat-item cat-item-171"><a href="https://phppot.com/menu/jquery/">jQuery</a></li><li class="cat-item cat-item-169"><a href="https://phppot.com/menu/javascript/">JavaScript</a></li><li class="cat-item cat-item-172"><a href="https://phppot.com/menu/wordpress/">WordPress</a></li><li class="cat-item cat-item-75"><a href="https://phppot.com/menu/mysql/">MySQL</a></li><li class="cat-item cat-item-173"><a href="https://phppot.com/menu/css/">CSS</a></li><li class="cat-item cat-item-163"><a href="https://phppot.com/menu/woocommerce/">WooCommerce</a></li></ul></div>
+            <div id="social-icon">
+                <div class="heading">Share this page</div>
+                <ul>
+                    <li><a class="social-link facebook-social-link"
+                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fphppot.com%2Fjavascript%2Fjavascript-shopping-cart%2F"
+                        title="Share on Facebook" target="_blank"
+                        rel="noopener"><span class="facebook-social-img">Share</span></a></li>
+                    <li><a class="social-link twitter-social-link"
+                        href="https://twitter.com/intent/tweet?original_referer=https://phppot.com&amp;source=tweetbutton&amp;text=Create JavaScript Shopping Cart with Add to Cart Code;url=https%3A%2F%2Fphppot.com%2Fjavascript%2Fjavascript-shopping-cart%2F&amp;via=phppot"
+                        title="Share on Twitter" target="_blank"
+                        rel="noopener"><span class="twitter-social-img">Tweet</span></a></li>
+                    <li><a class="social-link linkedin-social-link"
+                        href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fphppot.com%2Fjavascript%2Fjavascript-shopping-cart%2F&media=Create JavaScript Shopping Cart with Add to Cart Code"
+                        title="Share on Linkedin" target="_blank"
+                        rel="noopener"><span class="linkedin-social-img">Share</span></a></li>
+                </ul>
+            </div>
+
+		</div>
+<div id="sidebar">
+    <div id="aboutcntnt">
+        <div id="photo">
+            <img
+                src="https://phppot.com/wp-content/themes/solandra/images/Vincy.jpg"
+                alt="Vincy" width="100" height="100" title="Vincy">
+        </div>
+        <div id="aboutdesc">
+            <p>
+                Hi, I’m Vincy. I help build websites, grow businesses,
+                big and small. If that is what you want, <a
+                    href="https://phppot.com/contact/">contact me</a>.
+            </p>
+            <p>
+                I’m currently available for <strong>freelance work</strong>.
+            </p>
+        </div>
+        <div id="contactMe">
+            <a href="mailto:vincy@phppot.com" title="Contact">vincy@phppot.com</a>
+        </div>
+    </div>
+
+    <div id="recommended">
+        <div class="heading">Trending Now</div>
+        <ol>
+            <li><a
+                href="https://phppot.com/php/simple-php-shopping-cart/">Simple
+                    PHP Shopping Cart</a></li>
+            <li><a
+                href="https://phppot.com/php/stripe-payment-gateway-integration-using-php/">Stripe
+                    Payment Gateway Integration using PHP</a></li>
+            <li><a
+                href="https://phppot.com/php/user-registration-in-php-with-login-form-with-mysql-and-code-download/">User
+                    Registration in PHP with Login: Form with MySQL and
+                    Code Download</a></li>
+            <li><a href="https://phppot.com/php/php-contact-form/">PHP
+                    Contact Form</a></li>
+            <li><a
+                href="https://phppot.com/php/how-to-create-dynamic-stacked-bar-doughnut-and-pie-charts-in-php-with-chart-js/">How
+                    to Create Dynamic Stacked Bar, Doughnut and Pie
+                    charts in PHP with Chart.js</a></li>
+
+        </ol>
+    </div>
+    <div class="testimonials-sbar">
+    <div class="heading">Testimonials</div>
+    <p class="testimonial-content">
+        <span class='left-quotes'>&ldquo;</span>Subcontracted work was completed on time, as requested, with great attention to details and utmost flexibility despite various changes towards the end of the project. Bravo! ...<span
+            class='right-quotes'>&rdquo;</span>
+    </p>
+    <p class="testimonials-sbar-by">Haris Memisevic, Webpage.ba, Bosnia and Herzegovina</p>
+
+    <div>
+        <a href="https://phppot.com/testimonials/"><span
+            class="view-testimonials">View More Testimonials</span></a>
+    </div>
+</div>
+</div></div>
+<div id="footer-contact-note">
+	<div class="content">
+		<h2>Looking for an expert PHP freelance web developer?</h2>
+		<p class="footer-contact-banner-title">
+			Do you want to build a modern, lightweight, responsive website
+			quickly? <span class="footer-contact-btn"><a
+				id="footer-contact-navigation" href="/contact/">Contact Me</a></span>
+		</p>
+	</div>
+</div>
+<div id="footer">
+	<div class="content">
+		<div class="subscribe-section">
+			<div class="subscribe-email">
+                <div>
+	<form action="https://phppot.com/arTi23QeA-sendy/subscribe"
+		method="POST" accept-charset="utf-8">
+		<div>
+			<label for="subscribe_email" class="heading width-auto">Free Weekly Newsletter</label>
+		</div>
+		<input type="email" name="email" id="subscribe_email" class="feedb-email"
+			placeholder="Enter your email here" /><div class="display-none">
+			<label for="hp">HP</label><br /> <input type="text" name="hp" id="hp" />
+		</div><input type="hidden" name="list" value="unaXbMNmb0vHVJqwDHRzIg" /><input
+			type="hidden" name="subform" value="yes" /><input type="submit"
+			name="submit" value="Subscribe" class="subscribe" />
+			<div class="small-note">Privacy guaranteed, no spam ever.</div>
+	</form>
+</div></div>
+		</div>
+		<div class="shop-footer-common">
+			<div class="policy-doc-nav">
+				<a href="https://www.linkedin.com/in/vincya/"
+					rel="nofollow noopener" title="LinkedIn Page" target="_blank">LinkedIn</a><span
+					class="separator">|</span><a href="https://www.facebook.com/PPbay"
+					rel="nofollow noopener" title="Facebook Page" target="_blank">Facebook</a><span
+					class="separator">|</span><span class="copyright">&copy; 2013 -
+					2022 <a href="/" title="Helping you build websites">Phppot</a>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<script defer type='text/javascript' src='https://phppot.com/wp-content/plugins/akismet/_inc/akismet-frontend.js?ver=1664271268' id='akismet-frontend-js'></script>
+<script type='text/javascript'
+        src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js?ver=11.5.1'
+        id='highlightjs-js'></script>
+    <script type='text/javascript' id='highlightjs-js-after'>hljs.highlightAll();</script>
+</body>
+</html>
